@@ -1,22 +1,24 @@
 import { useState } from "react";
 
-import FormList from "./FormList";
+import InputList from "./FormList";
 
 function Lab1() {
 	const [formData, setFormData] = useState({ firstName: "", lastName: "" });
-	const [InputList] = FormList({
-		onChange: (data) => {
-			console.log("data modificada", data);
-			setFormData((prev) => ({ ...prev, ...data }));
-		},
-	});
+	const handlerOnChange = (e) => {
+		setFormData({ ...formData, [e.target.name]: e.target.value });
+	};
+
 	console.log("-----------------------LAB1-----------------------");
 
 	return (
 		<div>
 			<InputList>
-				<input type="text" name="firstName" />
-				<input type="text" name="lastName" />
+				<input
+					type="text"
+					name="firstName"
+					onChange={handlerOnChange}
+				/>
+				<input type="text" name="lastName" onChange={handlerOnChange} />
 			</InputList>
 			<p>
 				{formData.firstName} {formData.lastName}
