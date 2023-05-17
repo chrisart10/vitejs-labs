@@ -1,7 +1,7 @@
 import { useState } from "react";
-
-import InputList from "./FormList";
-import DummieComponet from "./DummieComponent";
+import InputList from "../../components/FormList";
+import DummieComponet from "../../components/DummieComponent";
+// import styled from "styled-components";
 
 function Lab1() {
 	const [formData, setFormData] = useState({ firstName: "", lastName: "" });
@@ -11,10 +11,6 @@ function Lab1() {
 	return (
 		<div>
 			<InputList handlerOnChange={setFormData}>
-				<input type="text" name="firstName" />
-				<input type="text" name="lastName" />
-				<input type="text" name="firstName" />
-				<input type="text" name="lastName" />
 				<input type="text" name="firstName" />
 				<input type="text" name="lastName" />
 			</InputList>
